@@ -21,7 +21,8 @@ trait ResolvesNotifierConfig
      */
     protected function setting(array $channelConfig, string $key, mixed $default = null): mixed
     {
-        if (isset($channelConfig[$key]) && $channelConfig[$key] !== null) {
+        // isset() is already false for both missing keys and null values.
+        if (isset($channelConfig[$key])) {
             return $channelConfig[$key];
         }
 
