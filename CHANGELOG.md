@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-06-13
+
+### Added
+
+- Support for Laravel 13.
+
+### Changed
+
+- Raised the minimum PHP version to 8.2 (Laravel 11+ requirement).
+- Widened dev tooling to Testbench 11, Pest 4 and PHPStan 2 so the suite runs
+  against Laravel 13.
+
+### Removed
+
+- Dropped support for Laravel 10.
+
+### Fixed
+
+- Removed the forced coverage report from `phpunit.xml`, which became a hard
+  error under PHPUnit 12 (Pest 4) when no coverage driver is installed. Coverage
+  is now opt-in via the `--coverage` flag.
+
 ## [1.0.0] - 2026-06-13
 
 ### Added
@@ -30,5 +52,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `ExceptionNotifierServiceProvider` with Laravel auto-discovery.
 - Support for PHP 8.1+ and Laravel 10, 11 & 12.
 
-[Unreleased]: https://github.com/adepane/notify-me/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/adepane/notify-me/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/adepane/notify-me/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/adepane/notify-me/releases/tag/v1.0.0
