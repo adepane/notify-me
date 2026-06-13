@@ -1,0 +1,59 @@
+{
+    "name": "dicre/notify-me",
+    "description": "Send Laravel exception/error logs to Telegram, Discord and Slack via a native Monolog custom handler.",
+    "keywords": ["laravel", "logging", "monolog", "telegram", "discord", "slack", "notifications", "exceptions"],
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0",
+        "monolog/monolog": "^3.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.13",
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "NotifyMe\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NotifyMe\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "audit": {
+            "block-insecure": false
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NotifyMe\\ExceptionNotifierServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "lint": "pint",
+        "lint:check": "pint --test",
+        "analyse": "phpstan analyse",
+        "test": "pest",
+        "check": [
+            "@lint:check",
+            "@analyse",
+            "@test"
+        ]
+    }
+}

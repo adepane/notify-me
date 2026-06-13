@@ -1,0 +1,24 @@
+{
+    "preset": "psr12",
+    "rules": {
+        "declare_strict_types": true,
+        "ordered_imports": {
+            "sort_algorithm": "alpha"
+        },
+        "no_unused_imports": true,
+        "not_operator_with_successor_space": false,
+        "trailing_comma_in_multiline": {
+            "elements": ["arrays", "arguments", "parameters"]
+        },
+        "binary_operator_spaces": {
+            "default": "single_space"
+        },
+        "single_quote": true,
+        "blank_line_before_statement": {
+            "statements": ["return", "throw", "try"]
+        }
+    },
+    "exclude": [
+        "vendor"
+    ]
+}

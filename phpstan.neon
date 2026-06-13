@@ -1,0 +1,7 @@
+parameters:
+    level: 6
+    paths:
+        - src
+    # The package is framework-agnostic at analysis time (no app bootstrap),
+    # so we treat Laravel's container-bound helpers as known.
+    treatPhpDocTypesAsCertain: false
